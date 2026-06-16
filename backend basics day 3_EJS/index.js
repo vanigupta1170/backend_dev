@@ -46,3 +46,17 @@ app.get("/users", (req, res) => {
         users: Object.keys(instaData)
     });
 });
+
+app.get("/quote",(req,res)=>{
+
+    let quotes=[
+        "Never give up",
+        "Keep learning",
+        "Practice daily",
+        "Success takes time"
+    ];
+
+    let idx=Math.floor(Math.random()*quotes.length);
+
+    res.send(quotes[idx]);
+});
