@@ -38,3 +38,11 @@ app.get("/rolldice", (req, res) => {
 app.listen(ports, () => {
     console.log(`Server is running on port ${ports}`);
 });
+
+app.get("/users", (req, res) => {
+    const instaData = require("./data.json");
+
+    res.render("users.ejs", {
+        users: Object.keys(instaData)
+    });
+});
